@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Wallet - Secure Solana Mobile Wallet</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/app-icon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <img src="../assets/logo.svg" alt="Pocket Wallet" class="logo-icon">
+                    <h1>Pocket Wallet</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#download">Download</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="../assets/app-icon.svg" alt="Pocket Wallet Icon" class="hero-icon">
+                <h2>Pocket Wallet</h2>
+                <p>Your secure Solana mobile wallet - Manage SOL, SPL tokens, and NFTs</p>
+                <div class="cta-buttons">
+                    <a href="#download" class="btn btn-primary">Download Now</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="screenshots-carousel">
+        <div class="coverflow-container">
+            <div class="coverflow">
+                <div class="coverflow-item" data-index="0">
+                    <img src="../assets/home.png" alt="Home Screen">
+                    <div class="screenshot-label">Home</div>
+                </div>
+                <div class="coverflow-item" data-index="1">
+                    <img src="../assets/manage _wallets.png" alt="Manage Wallets">
+                    <div class="screenshot-label">Manage Wallets</div>
+                </div>
+                <div class="coverflow-item" data-index="2">
+                    <img src="../assets/swap tokens.png" alt="Swap Tokens">
+                    <div class="screenshot-label">Swap Tokens</div>
+                </div>
+                <div class="coverflow-item active" data-index="3">
+                    <img src="../assets/browser.png" alt="Browser">
+                    <div class="screenshot-label">DApp Browser</div>
+                </div>
+                <div class="coverflow-item" data-index="4">
+                    <img src="../assets/rpc setting.png" alt="RPC Settings">
+                    <div class="screenshot-label">RPC Settings</div>
+                </div>
+                <div class="coverflow-item" data-index="5">
+                    <img src="../assets/select_language.png" alt="Language Selection">
+                    <div class="screenshot-label">Language</div>
+                </div>
+                <div class="coverflow-item" data-index="6">
+                    <img src="../assets/bimetric set.png" alt="Biometric Settings">
+                    <div class="screenshot-label">Biometric Lock</div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev">‹</button>
+            <button class="carousel-btn next">›</button>
+        </div>
+        <div class="carousel-dots"></div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Wallet Management</h3>
+                    <p>Import or generate wallets with mnemonic phrase or private key support</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Token Management</h3>
+                    <p>View SOL balance and all SPL tokens with real-time updates</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Token Swaps</h3>
+                    <p>Swap tokens using Jupiter Aggregator for the best rates</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📤</div>
+                    <h3>Send Tokens</h3>
+                    <p>Send SOL and SPL tokens quickly and securely</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🖼️</div>
+                    <h3>NFT Management</h3>
+                    <p>View, manage, and transfer your NFT collection</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Transaction History</h3>
+                    <p>Complete transaction records with filtering, search, and export</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Biometric Auth</h3>
+                    <p>Fingerprint, Face ID, and Iris recognition to protect your wallet</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Secure Storage</h3>
+                    <p>Private keys encrypted and stored locally, never leave your device</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="security" class="security">
+        <div class="container">
+            <h2>Security First</h2>
+            <p class="security-intro">Your keys, your crypto. Complete control with zero server dependency.</p>
+
+            <div class="security-highlight">
+                <div class="highlight-box">
+                    <h3>🔒 100% Client-Side Security</h3>
+                    <p>This wallet operates entirely on your device. No backend servers, no cloud storage, no third-party access. Your private keys are generated, stored, and used exclusively on your phone.</p>
+                </div>
+            </div>
+
+            <div class="security-content">
+                <div class="security-features">
+                    <div class="security-item">
+                        <h3>🔐 Military-Grade Encryption</h3>
+                        <p>Private keys are encrypted using expo-secure-store with hardware-backed encryption. Your keys are protected by your device's secure enclave, making them virtually impossible to extract.</p>
+                    </div>
+                    <div class="security-item">
+                        <h3>📱 Local Transaction Signing</h3>
+                        <p>All transactions are signed locally on your device. Your private keys never leave your phone and are never transmitted over the internet. Only signed transactions are broadcast to the blockchain.</p>
+                    </div>
+                    <div class="security-item">
+                        <h3>🚫 No Server Communication</h3>
+                        <p>The wallet connects directly to Solana RPC nodes for blockchain data. No authentication servers, no key management servers, no analytics tracking. Your wallet activity remains completely private.</p>
+                    </div>
+                    <div class="security-item">
+                        <h3>👆 Biometric Protection</h3>
+                        <p>Secure your wallet with fingerprint, Face ID, or Iris recognition. Biometric data never leaves your device and is managed entirely by your phone's operating system.</p>
+                    </div>
+                    <div class="security-item">
+                        <h3>🔒 Auto-Lock Feature</h3>
+                        <p>Wallet automatically locks when inactive, requiring biometric authentication to unlock. Protects your assets even if your phone is accessed by others.</p>
+                    </div>
+                    <div class="security-item">
+                        <h3>🛡️ Open Source</h3>
+                        <p>Fully open source code means complete transparency. Anyone can audit the security implementation and verify that no backdoors or vulnerabilities exist.</p>
+                    </div>
+                    <div class="security-item">
+                        <h3>💾 Local Data Only</h3>
+                        <p>All wallet data including transaction history, token balances, and NFT metadata are cached locally. No user data is ever uploaded to external servers.</p>
+                    </div>
+                    <div class="security-item">
+                        <h3>🔑 You Control Your Keys</h3>
+                        <p>Export your mnemonic phrase or private key anytime. You have complete ownership and can import your wallet into any other Solana-compatible wallet.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="security-note">
+                <h3>⚠️ Important Security Reminder</h3>
+                <p>Always backup your mnemonic phrase and store it securely offline. If you lose your device without a backup, your funds cannot be recovered. Never share your mnemonic phrase or private key with anyone.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download">
+        <div class="container">
+            <h2>Download Now</h2>
+            <p>Available for Android and iOS</p>
+            <div class="download-buttons">
+                <a href="#" class="download-btn android">
+                    <span class="icon">📱</span>
+                    <div>
+                        <small>Download for</small>
+                        <strong>Android</strong>
+                    </div>
+                </a>
+                <a href="#" class="download-btn ios">
+                    <span class="icon">🍎</span>
+                    <div>
+                        <small>Download for</small>
+                        <strong>iOS</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pocket Wallet. Open source project under MIT License</p>
+            <p class="disclaimer">⚠️ This is a development wallet. Use at your own risk. Always backup your mnemonic phrase.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

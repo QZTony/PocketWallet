@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx expo prebuild:*)",
+      "Bash(npm run android:*)",
+      "Bash(npm start)",
+      "Bash(timeout:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(npx expo start)",
+      "Bash(ping:*)",
+      "Bash(start http://localhost:8081)",
+      "Bash(ipconfig:*)",
+      "Bash(where:*)",
+      "Bash(dir \"C:\\\\Users\\\\%USERNAME%\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\emulator\")",
+      "Bash(npx expo start:*)",
+      "Bash(adb devices:*)",
+      "Bash(dir:*)",
+      "Bash(dir \"%PROGRAMFILES\\(x86\\)%\\\\Android\\\\*\")",
+      "Bash(emulator:*)",
+      "Bash(npx expo run:android:*)",
+      "Bash(start \"\" \"C:\\\\Program Files\\\\Android\\\\Android Studio\\\\bin\\\\studio64.exe\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

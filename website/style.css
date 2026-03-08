@@ -1,0 +1,539 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: #000;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+    border-bottom: 1px solid #333;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.hero {
+    background: #000;
+    color: white;
+    padding: 4rem 0 2rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.hero .container {
+    text-align: center;
+}
+
+.hero-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+    filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.2));
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.screenshots-carousel {
+    background: #000;
+    padding: 4rem 0;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #333;
+}
+
+.coverflow-container {
+    perspective: 1500px;
+    width: 100%;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.coverflow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+.coverflow-item {
+    position: absolute;
+    width: 280px;
+    height: 480px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.coverflow-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
+    background: #1a1a1a;
+    padding: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.coverflow-item.active {
+    z-index: 10;
+    opacity: 1;
+    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1.2);
+}
+
+.coverflow-item.active img {
+    box-shadow: 0 30px 80px rgba(255, 255, 255, 0.2);
+    border: 1px solid #666;
+}
+
+.coverflow-item.active .screenshot-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.coverflow-item .screenshot-label {
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+}
+
+.coverflow-item:hover:not(.active) {
+    opacity: 0.7;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 20;
+}
+
+.carousel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.carousel-dot.active {
+    background: white;
+    transform: scale(1.3);
+    border: 1px solid white;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background: white;
+    color: #000;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.phone-mockup {
+    display: none;
+}
+
+.features {
+    padding: 4rem 0;
+    background: #0a0a0a;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #333;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(255,255,255,0.1);
+    border: 1px solid #555;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: #aaa;
+}
+
+.security {
+    padding: 4rem 0;
+    background: #000;
+}
+
+.security h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.security-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.security-highlight {
+    margin-bottom: 3rem;
+}
+
+.highlight-box {
+    background: #1a1a1a;
+    color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+    border: 1px solid #333;
+}
+
+.highlight-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-box p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+.security-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.security-item {
+    padding: 2rem;
+    background: #1a1a1a;
+    border-radius: 12px;
+    border-left: 4px solid #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #333;
+    border-left: 4px solid #fff;
+}
+
+.security-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255,255,255,0.1);
+}
+
+.security-item h3 {
+    color: #fff;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.security-item p {
+    line-height: 1.7;
+    color: #aaa;
+}
+
+.security-note {
+    background: #1a1a1a;
+    border: 2px solid #fbbf24;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.security-note h3 {
+    color: #fbbf24;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.security-note p {
+    color: #ddd;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.download {
+    padding: 4rem 0;
+    background: #0a0a0a;
+    color: white;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.download h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.download p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #1a1a1a;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-width: 200px;
+    border: 1px solid #333;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,255,255,0.1);
+    border: 1px solid #555;
+}
+
+.download-btn .icon {
+    font-size: 2.5rem;
+}
+
+.download-btn small {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.download-btn strong {
+    display: block;
+    font-size: 1.1rem;
+}
+
+footer {
+    background: #000;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    color: #fbbf24;
+}
+
+@media (max-width: 768px) {
+    .hero .container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .features-grid,
+    .security-features {
+        grid-template-columns: 1fr;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coverflow-container {
+        height: 450px;
+        perspective: 1000px;
+    }
+
+    .coverflow-item {
+        width: 200px;
+        height: 380px;
+    }
+
+    .coverflow-item.active {
+        transform: translateX(0) translateZ(0) rotateY(0deg) scale(1.15);
+    }
+
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}

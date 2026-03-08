@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Pocket Wallet",
+    "slug": "pocket-wallet",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pocketwallet.app"
+    },
+    "android": {
+      "package": "com.pocketwallet.app"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-asset",
+      "expo-font",
+      "expo-localization"
+    ],
+    "scheme": "pocket-wallet"
+  }
+}
