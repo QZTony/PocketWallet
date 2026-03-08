@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Pocket Wallet</title>
+    <link rel="icon" type="image/svg+xml" href="assets/app-icon.svg">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .privacy-container {
+            max-width: 900px;
+            margin: 80px auto 40px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+        .privacy-container h1 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+        .privacy-container .last-updated {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .privacy-container h2 {
+            color: #fff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .privacy-container p, .privacy-container li {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .privacy-container ul {
+            margin-left: 20px;
+        }
+        .privacy-container strong {
+            color: #00d4ff;
+        }
+        .highlight-box {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 4px solid #00d4ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <img src="assets/logo.svg" alt="Pocket Wallet" class="logo-icon">
+                    <h1>Pocket Wallet</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#security">Security</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="privacy-container">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: March 8, 2026</p>
+
+        <div class="highlight-box">
+            <p><strong>TL;DR:</strong> Pocket Wallet is a fully client-side, non-custodial wallet. We do not collect, store, or transmit any of your personal data. Your private keys, mnemonic phrases, and all sensitive information never leave your device and are encrypted using hardware-backed security.</p>
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>Pocket Wallet ("we", "our", or "the app") is a non-custodial Solana mobile wallet that prioritizes your privacy and security. This Privacy Policy explains in detail how we handle (or rather, don't handle) your information when you use our application.</p>
+        <p><strong>Key Principle:</strong> Pocket Wallet operates with a zero-knowledge architecture. We have no servers, no databases, and no way to access your funds or personal information.</p>
+
+        <h2>2. Information We Do NOT Collect</h2>
+        <p>Pocket Wallet does not collect, transmit, or store any of the following:</p>
+        <ul>
+            <li><strong>Personal Information:</strong> No names, email addresses, phone numbers, or any identifying information</li>
+            <li><strong>Financial Data:</strong> No wallet balances, transaction amounts, or portfolio values</li>
+            <li><strong>Usage Analytics:</strong> No tracking of which features you use, how often you use the app, or your behavior patterns</li>
+            <li><strong>Device Information:</strong> No device IDs, IP addresses, or hardware specifications</li>
+            <li><strong>Location Data:</strong> No GPS coordinates or location tracking of any kind</li>
+            <li><strong>Crash Reports:</strong> No automatic error reporting or diagnostic data collection</li>
+            <li><strong>Marketing Data:</strong> No advertising IDs or marketing profiles</li>
+        </ul>
+
+        <h2>3. How Your Data is Stored Locally</h2>
+        <p>All wallet data is stored exclusively on your device using secure, encrypted storage mechanisms provided by your operating system:</p>
+
+        <h3>3.1 Private Keys and Mnemonic Phrases</h3>
+        <ul>
+            <li><strong>Storage Method:</strong> Expo SecureStore with hardware-backed encryption</li>
+            <li><strong>Encryption:</strong> AES-256 encryption using your device's secure enclave (Keychain on iOS, Keystore on Android)</li>
+            <li><strong>Access Control:</strong> Keys are only accessible when the app is unlocked and authenticated</li>
+            <li><strong>Multi-Wallet Support:</strong> Each wallet's private key and mnemonic are stored separately with unique identifiers (format: w_pk_{wallet_id} and w_mn_{wallet_id})</li>
+            <li><strong>Derivation Path:</strong> HD wallets use BIP44 derivation path m/44'/501'/0'/0' for Solana</li>
+        </ul>
+
+        <h3>3.2 Wallet Metadata</h3>
+        <ul>
+            <li><strong>Storage Method:</strong> AsyncStorage (unencrypted local storage)</li>
+            <li><strong>Data Stored:</strong> Wallet names, public keys, wallet IDs, creation timestamps, and active wallet selection</li>
+            <li><strong>Why Unencrypted:</strong> This data is not sensitive (public keys are meant to be public) and needs to be quickly accessible</li>
+        </ul>
+
+        <h3>3.3 Transaction History Cache</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Cached locally for faster loading and offline viewing</li>
+            <li><strong>Source:</strong> Retrieved from public Solana blockchain via RPC nodes</li>
+            <li><strong>Content:</strong> Transaction signatures, timestamps, amounts, and recipient addresses</li>
+            <li><strong>Note:</strong> This is public blockchain data, not private information</li>
+        </ul>
+
+        <h3>3.4 Application Settings</h3>
+        <ul>
+            <li><strong>Language Preference:</strong> Your selected language (English, Chinese, Japanese, Korean)</li>
+            <li><strong>RPC Endpoint:</strong> Your chosen Solana RPC node URL (Mainnet, Devnet, or custom)</li>
+            <li><strong>Biometric Settings:</strong> Whether biometric authentication is enabled (boolean flag only)</li>
+            <li><strong>App Lock Status:</strong> Whether the app is currently locked</li>
+        </ul>
+
+        <h2>4. Biometric Authentication</h2>
+        <p>Pocket Wallet supports fingerprint, Face ID, and iris recognition for enhanced security:</p>
+        <ul>
+            <li><strong>Processing:</strong> All biometric authentication is handled entirely by your device's operating system (iOS LocalAuthentication or Android BiometricPrompt)</li>
+            <li><strong>No Access:</strong> The app never accesses your actual biometric data (fingerprints, face scans, iris patterns)</li>
+            <li><strong>Storage:</strong> Only a boolean flag indicating whether biometric auth is enabled is stored in SecureStore</li>
+            <li><strong>Optional:</strong> Biometric authentication is completely optional and can be disabled at any time</li>
+            <li><strong>Fallback:</strong> Device passcode/PIN can always be used as a fallback</li>
+        </ul>
+
+        <h2>5. Blockchain Interactions</h2>
+        <p>Pocket Wallet connects directly to Solana blockchain nodes to function. Here's what data is transmitted:</p>
+
+        <h3>5.1 RPC Node Communications</h3>
+        <ul>
+            <li><strong>Public Key Queries:</strong> Your wallet's public address is sent to RPC nodes to retrieve balance and transaction history</li>
+            <li><strong>Transaction Broadcasting:</strong> Signed transactions are broadcast to the network (this is how blockchain works)</li>
+            <li><strong>Token Metadata:</strong> Requests for token names, symbols, and logos</li>
+            <li><strong>NFT Data:</strong> Queries for NFT metadata and images</li>
+            <li><strong>Important:</strong> Your private keys are NEVER transmitted. Only public addresses and signed transactions are sent</li>
+        </ul>
+
+        <h3>5.2 Default RPC Endpoints</h3>
+        <ul>
+            <li><strong>Mainnet:</strong> https://api.mainnet-beta.solana.com (operated by Solana Foundation)</li>
+            <li><strong>Devnet:</strong> https://api.devnet.solana.com (operated by Solana Foundation)</li>
+            <li><strong>Custom:</strong> You can configure your own RPC endpoint for enhanced privacy</li>
+        </ul>
+
+        <h3>5.3 What RPC Nodes Can See</h3>
+        <p>When you use Pocket Wallet, RPC nodes can observe:</p>
+        <ul>
+            <li>Your wallet's public address (which is public information on the blockchain anyway)</li>
+            <li>Your IP address (standard for any internet connection)</li>
+            <li>Timing of your queries (when you check your balance or send transactions)</li>
+        </ul>
+        <p><strong>Privacy Tip:</strong> For maximum privacy, consider using a VPN or running your own Solana RPC node.</p>
+
+        <h2>6. Third-Party Service Integrations</h2>
+
+        <h3>6.1 Jupiter Aggregator (Token Swaps)</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Provides optimal token swap routes and pricing</li>
+            <li><strong>Data Shared:</strong> Token pair (what you're swapping), amount, and your wallet's public address</li>
+            <li><strong>API Calls:</strong> Made directly from your device to Jupiter's API</li>
+            <li><strong>Privacy Policy:</strong> https://jup.ag/privacy-policy</li>
+            <li><strong>Note:</strong> Swap transactions are executed on-chain and are publicly visible on the Solana blockchain</li>
+        </ul>
+
+        <h3>6.2 Token Metadata Services</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Retrieve token logos, names, and descriptions</li>
+            <li><strong>Sources:</strong> Solana Token List, on-chain metadata programs</li>
+            <li><strong>Data Shared:</strong> Token mint addresses (public information)</li>
+        </ul>
+
+        <h3>6.3 NFT Metadata Services</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Display NFT images and attributes</li>
+            <li><strong>Sources:</strong> IPFS, Arweave, or centralized hosting (depending on the NFT)</li>
+            <li><strong>Data Shared:</strong> NFT mint addresses and metadata URIs (public information)</li>
+        </ul>
+
+        <h2>7. Cryptographic Implementation Details</h2>
+        <p>For transparency, here are the cryptographic libraries and methods we use:</p>
+        <ul>
+            <li><strong>Key Generation:</strong> BIP39 for mnemonic phrases, BIP44 for HD wallet derivation</li>
+            <li><strong>Signing:</strong> Ed25519 signatures via TweetNaCl library</li>
+            <li><strong>Encoding:</strong> Base58 encoding via bs58 library</li>
+            <li><strong>Secure Storage:</strong> Expo SecureStore (wraps iOS Keychain and Android Keystore)</li>
+            <li><strong>Random Number Generation:</strong> Cryptographically secure random number generation for key creation</li>
+        </ul>
+
+        <h2>8. Data Retention and Deletion</h2>
+        <ul>
+            <li><strong>Retention:</strong> All data remains on your device until you explicitly delete it</li>
+            <li><strong>Wallet Deletion:</strong> Deleting a wallet removes its private key, mnemonic, and metadata from your device</li>
+            <li><strong>App Uninstallation:</strong> Uninstalling the app deletes all locally stored data</li>
+            <li><strong>Clear App Data:</strong> You can clear all app data through your device settings</li>
+            <li><strong>Important:</strong> Once deleted, data cannot be recovered unless you have backed up your mnemonic phrase</li>
+        </ul>
+
+        <h2>9. Security Best Practices</h2>
+        <p>While we don't collect your data, you should still protect it:</p>
+        <ul>
+            <li><strong>Backup Your Mnemonic:</strong> Write down your 12-word recovery phrase and store it securely offline</li>
+            <li><strong>Enable Biometric Lock:</strong> Protect your wallet with fingerprint or Face ID</li>
+            <li><strong>Use Strong Device Security:</strong> Set a strong PIN/password on your device</li>
+            <li><strong>Beware of Phishing:</strong> Never share your mnemonic phrase or private key with anyone</li>
+            <li><strong>Verify Transactions:</strong> Always double-check recipient addresses before sending</li>
+            <li><strong>Keep App Updated:</strong> Install updates to receive security patches</li>
+        </ul>
+
+        <h2>10. Open Source Transparency</h2>
+        <p>Pocket Wallet is fully open source, which means:</p>
+        <ul>
+            <li><strong>Code Audit:</strong> Anyone can review our source code to verify our privacy claims</li>
+            <li><strong>No Hidden Tracking:</strong> You can confirm there are no analytics, tracking, or data collection mechanisms</li>
+            <li><strong>Community Verification:</strong> Security researchers and developers can audit our cryptographic implementation</li>
+            <li><strong>Reproducible Builds:</strong> You can build the app yourself from source code to ensure it matches the published version</li>
+            <li><strong>GitHub Repository:</strong> [Your GitHub URL here]</li>
+        </ul>
+
+        <h2>11. Children's Privacy</h2>
+        <p>Pocket Wallet does not collect information from anyone, including children under 13 years of age. However, cryptocurrency management requires understanding of financial concepts and security practices. We recommend parental supervision for users under 18.</p>
+
+        <h2>12. International Users</h2>
+        <p>Pocket Wallet can be used anywhere in the world. Since all data is stored locally on your device:</p>
+        <ul>
+            <li>No data crosses international borders through our systems</li>
+            <li>GDPR, CCPA, and other privacy regulations are inherently satisfied (we don't collect data)</li>
+            <li>You maintain full control and ownership of your data</li>
+        </ul>
+
+        <h2>13. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy to reflect changes in the app or legal requirements. Changes will be posted on our website and in the app with an updated "Last Updated" date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+        <h2>14. Your Rights</h2>
+        <p>Since we don't collect your data, traditional data rights (access, deletion, portability) don't apply in the usual sense. However, you have complete control:</p>
+        <ul>
+            <li><strong>Right to Access:</strong> All your data is on your device - you can access it anytime through the app</li>
+            <li><strong>Right to Delete:</strong> Delete wallets or uninstall the app to remove all data</li>
+            <li><strong>Right to Export:</strong> Export your mnemonic phrase or private key to use in other wallets</li>
+            <li><strong>Right to Control:</strong> You have complete control over your data at all times</li>
+        </ul>
+
+        <h2>15. Contact Information</h2>
+        <p>If you have questions about this Privacy Policy or our privacy practices:</p>
+        <ul>
+            <li><strong>Website:</strong> <a href="https://pocketwallet.qqdata.click" style="color: #00d4ff;">https://pocketwallet.qqdata.click</a></li>
+            <li><strong>GitHub Issues:</strong> <a href="https://github.com/yourusername/pocket-wallet/issues" style="color: #00d4ff;">Report an Issue</a></li>
+            <li><strong>Email:</strong> pocketwallet@postm.net</li>
+        </ul>
+
+        <h2>16. Legal Disclaimers</h2>
+
+        <h3>16.1 No Warranty</h3>
+        <p>Pocket Wallet is provided "as is" without warranties of any kind, either express or implied. We do not guarantee that the app will be error-free, secure, or uninterrupted.</p>
+
+        <h3>16.2 Your Responsibility</h3>
+        <p>By using Pocket Wallet, you acknowledge and agree that:</p>
+        <ul>
+            <li>You are solely responsible for securing your private keys and mnemonic phrases</li>
+            <li>Lost or stolen keys cannot be recovered by us or anyone else</li>
+            <li>Cryptocurrency transactions are irreversible</li>
+            <li>You are responsible for complying with tax laws and regulations in your jurisdiction</li>
+            <li>You understand the risks associated with cryptocurrency</li>
+        </ul>
+
+        <h3>16.3 Limitation of Liability</h3>
+        <p>We are not liable for any losses, damages, or claims arising from:</p>
+        <ul>
+            <li>Loss of private keys or mnemonic phrases</li>
+            <li>Unauthorized access to your device</li>
+            <li>Errors in transaction amounts or recipient addresses</li>
+            <li>Network fees or failed transactions</li>
+            <li>Third-party service failures (RPC nodes, Jupiter, etc.)</li>
+            <li>Bugs, vulnerabilities, or security breaches</li>
+            <li>Changes in cryptocurrency value</li>
+        </ul>
+
+        <h3>16.4 Regulatory Compliance</h3>
+        <p>Pocket Wallet is a non-custodial wallet tool. We:</p>
+        <ul>
+            <li>Do not provide financial, investment, or legal advice</li>
+            <li>Are not a financial institution or money transmitter</li>
+            <li>Do not custody, control, or have access to user funds</li>
+            <li>Are not responsible for regulatory compliance in your jurisdiction</li>
+        </ul>
+
+        <h2>17. Acknowledgment</h2>
+        <p>By using Pocket Wallet, you acknowledge that you have read, understood, and agree to this Privacy Policy. You understand that this is a non-custodial wallet and that you have complete responsibility for securing your private keys and funds.</p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pocket Wallet. Open source project under MIT License</p>
+            <p><a href="privacy.html" style="color: #00d4ff;">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>

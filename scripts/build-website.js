@@ -41,8 +41,10 @@ function main() {
   // 2. 复制 style.css 和 script.js
   copyFile(path.join(WEBSITE, 'style.css'), path.join(DIST, 'style.css'));
   copyFile(path.join(WEBSITE, 'script.js'), path.join(DIST, 'script.js'));
+  copyFile(path.join(WEBSITE, 'privacy.html'), path.join(DIST, 'privacy.html'));
   console.log('  ✓ style.css');
   console.log('  ✓ script.js');
+  console.log('  ✓ privacy.html');
 
   // 3. 复制 assets
   const assetFiles = fs.readdirSync(ASSETS).filter(f => {

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pocket Wallet Banner</title>
+</head>
+<body style="margin: 0; padding: 0;">
+    <canvas id="canvas" width="1200" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // 渐变背景
+        const gradient = ctx.createLinearGradient(0, 0, 1200, 600);
+        gradient.addColorStop(0, '#1a1a2e');
+        gradient.addColorStop(0.5, '#16213e');
+        gradient.addColorStop(1, '#0f3460');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 1200, 600);
+
+        // 添加装饰圆圈
+        ctx.globalAlpha = 0.1;
+        ctx.fillStyle = '#00d4ff';
+        ctx.beginPath();
+        ctx.arc(1000, 100, 200, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#9d4edd';
+        ctx.beginPath();
+        ctx.arc(200, 500, 150, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+
+        // 标题
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 80px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('Pocket Wallet', 600, 250);
+
+        // 副标题
+        ctx.fillStyle = '#00d4ff';
+        ctx.font = '36px Arial, sans-serif';
+        ctx.fillText('Your Secure Solana Mobile Wallet', 600, 320);
+
+        // 特性标签
+        ctx.font = '24px Arial, sans-serif';
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText('🔒 Secure  •  💰 SOL & SPL Tokens  •  🖼️ NFTs  •  🔄 Token Swap', 600, 400);
+
+        console.log('Banner created! Right-click on the canvas and save as PNG.');
+    </script>
+</body>
+</html>

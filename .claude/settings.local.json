@@ -22,7 +22,9 @@
       "Bash(npx expo run:android:*)",
       "Bash(start \"\" \"C:\\\\Program Files\\\\Android\\\\Android Studio\\\\bin\\\\studio64.exe\")",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(ls:*)",
+      "Bash(npm run build:website:*)"
     ]
   }
 }

@@ -1,10 +1,11 @@
 {
   "expo": {
     "name": "Pocket Wallet",
-    "slug": "pocket-wallet",
+    "slug": "pocket-wallet-solana",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
+    "icon": "./assets/app-icon.png",
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -13,7 +14,11 @@
       "bundleIdentifier": "com.pocketwallet.app"
     },
     "android": {
-      "package": "com.pocketwallet.app"
+      "package": "com.pocketwallet.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/app-icon.png",
+        "backgroundColor": "#1a1a2e"
+      }
     },
     "plugins": [
       "expo-router",
@@ -22,6 +27,14 @@
       "expo-font",
       "expo-localization"
     ],
-    "scheme": "pocket-wallet"
+    "scheme": "pocket-wallet",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "3244a743-128f-4712-93fd-2599073f5c0d"
+      }
+    }
   }
 }
